@@ -1,5 +1,5 @@
 import json
-frpm ollama import chat
+from ollama import chat
 from parse_data import load_items, get_unclaimed_items, save_result
 
 ## Import the necessary modules
@@ -38,7 +38,7 @@ Find all possible matching item IDs. Return only JSON as required.
 ## Logic to ask Qwen for all the possible matches based on the system prompt and user prompt.
 ## The function should return the response from Qwen.
 def ask_qwen(system_prompt, user_prompt):
-    response = ollama.chat(
+    response = chat(
         model="qwen3:8b",
         messages=[
             {"role": "system", "content": system_prompt},
